@@ -1,0 +1,393 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="dark"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>Markdown 使用指南 | zya的Blog</title><meta name="author" content="zyajkw"><meta name="copyright" content="zyajkw"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#0d0d0d"><meta name="description" content="这是老师分享的一个Markdown使用指南 ，希望对大家有用。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Markdown 使用指南">
+<meta property="og:url" content="http://example.com/2026/10/24/Markdown-%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97/index.html">
+<meta property="og:site_name" content="zya的Blog">
+<meta property="og:description" content="这是老师分享的一个Markdown使用指南 ，希望对大家有用。">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://example.com/img/f7.webp">
+<meta property="article:published_time" content="2026-10-24T03:57:48.000Z">
+<meta property="article:modified_time" content="2026-10-24T04:00:19.275Z">
+<meta property="article:author" content="zyajkw">
+<meta property="article:tag" content="Markdown">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://example.com/img/f7.webp"><script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Markdown 使用指南",
+  "url": "http://example.com/2026/10/24/Markdown-%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97/",
+  "image": "http://example.com/img/f7.webp",
+  "datePublished": "2026-10-24T03:57:48.000Z",
+  "dateModified": "2026-10-24T04:00:19.275Z",
+  "author": [
+    {
+      "@type": "Person",
+      "name": "zyajkw",
+      "url": "http://example.com"
+    }
+  ]
+}</script><link rel="shortcut icon" href="/img/tx3.jpeg"><link rel="canonical" href="http://example.com/2026/10/24/Markdown-%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css?v=5.7.0"><link rel="stylesheet" href="/true"><script>
+    (() => {
+      
+    const saveToLocal = {
+      set: (key, value, ttl) => {
+        const data = { value }
+
+        if (ttl != null) {
+          data.expiry = Date.now() + ttl * 86400000
+        }
+
+        localStorage.setItem(key, JSON.stringify(data))
+      },
+      get: key => {
+        const itemStr = localStorage.getItem(key)
+        if (!itemStr) return
+
+        try {
+          const data = JSON.parse(itemStr)
+
+          if (data.expiry && Date.now() > data.expiry) {
+            localStorage.removeItem(key)
+            return
+          }
+
+          return data.value
+        } catch {
+          localStorage.removeItem(key)
+        }
+      }
+    }
+
+    const scriptCache = new Map()
+    const cssCache = new Map()
+    window.btf = {
+      saveToLocal,
+      getScript: (url, attr = {}) => {
+        if (scriptCache.has(url)) {
+          return scriptCache.get(url)
+        }
+
+        const promise = new Promise((resolve, reject) => {
+          const script = document.createElement('script')
+
+          script.src = url
+          script.async = true
+
+          for (const key in attr) {
+            script.setAttribute(key, attr[key])
+          }
+
+          script.onload = resolve
+          script.onerror = reject
+
+          document.head.appendChild(script)
+        })
+
+        scriptCache.set(url, promise)
+
+        return promise
+      },
+      getCSS: (url, id) => {
+        if (cssCache.has(url)) {
+          return cssCache.get(url)
+        }
+
+        const promise = new Promise((resolve, reject) => {
+          const link = document.createElement('link')
+
+          link.rel = 'stylesheet'
+          link.href = url
+
+          if (id) {
+            link.id = id
+          }
+
+          link.onload = resolve
+          link.onerror = reject
+
+          document.head.appendChild(link)
+        })
+
+        cssCache.set(url, promise)
+
+        return promise
+      },
+      addGlobalFn: (key, fn, name = false, parent = window) => {
+        if (!false && key.startsWith('pjax')) return
+        const globalFn = parent.globalFn || {}
+        globalFn[key] = globalFn[key] || {}
+        globalFn[key][name || Object.keys(globalFn[key]).length] = fn
+        parent.globalFn = globalFn
+      }
+    }
+  
+      
+      const metaThemeColor = document.querySelector('meta[name="theme-color"]')
+      const activateDarkMode = () => {
+        document.documentElement.dataset.theme = 'dark'
+        if (metaThemeColor !== null) {
+          metaThemeColor.setAttribute('content', '#0d0d0d')
+        }
+      }
+      const activateLightMode = () => {
+        document.documentElement.dataset.theme = 'light'
+        if (metaThemeColor !== null) {
+          metaThemeColor.setAttribute('content', '#ffffff')
+        }
+      }
+
+      btf.activateDarkMode = activateDarkMode
+      btf.activateLightMode = activateLightMode
+
+      const theme = saveToLocal.get('theme')
+    
+          theme === 'dark' ? activateDarkMode() : theme === 'light' ? activateLightMode() : null
+        
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        document.documentElement.classList.toggle('hide-aside', asideStatus === 'hide')
+      }
+    
+      
+    const detectApple = () => {
+      if (/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)) {
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+  
+    })()
+  </script><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false,"highlightFullpage":false,"highlightMacStyle":false},
+  copy: {
+    success: '复制成功',
+    error: '复制失败',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'null',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid@4.13.0/dist/infinitegrid.min.js',
+    buttonText: '加载更多'
+  },
+  isPhotoFigcaption: false,
+  islazyloadPlugin: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'Markdown 使用指南',
+  isHighlightShrink: false,
+  isToc: true,
+  pageType: 'post'
+}</script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.1/css/all.min.css"><!-- hexo injector head_end start --><link rel="stylesheet" href="https://unpkg.zhimg.com/hexo-butterfly-wowjs/lib/animate.min.css" media="print" onload="this.media='screen'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-butterfly-swiper-x/lib/swiper.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-butterfly-swiper-x/lib/swiperstyle.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-butterfly-categories-card/lib/categorybar.css"><!-- hexo injector head_end end --><meta name="generator" content="Hexo 7.3.0"></head><body><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url(/img/f7.webp);"><nav id="nav"><span id="blog-info"><a class="nav-site-title" href="/"><span class="site-name">zya的Blog</span></a><a class="nav-page-title" href="/"><span class="site-name">Markdown 使用指南</span><span class="site-name"><i class="fa-solid fa-circle-arrow-left"></i><span>  返回首页</span></span></a></span><div id="menus"></div></nav><div id="post-info"><h1 class="post-title">Markdown 使用指南</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2026-10-24T03:57:48.000Z" title="发表于 2026-10-24 11:57:48">2026-10-24</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2026-10-24T04:00:19.275Z" title="更新于 2026-10-24 12:00:19">2026-10-24</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E5%AD%A6%E4%B9%A0/">学习</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title=""><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">浏览量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="container post-content" id="article-container"><h1 id="Markdown-使用指南"><a href="#Markdown-使用指南" class="headerlink" title="Markdown 使用指南"></a>Markdown 使用指南</h1><h2 id="1-什么是-Markdown？"><a href="#1-什么是-Markdown？" class="headerlink" title="1. 什么是 Markdown？"></a>1. 什么是 Markdown？</h2><p>Markdown 是一种轻量级标记语言，由 John Gruber 于 2004 年创建。它使用简单的文本标记来格式化文档，最终可以转换为 HTML 等格式。Markdown 的设计理念是让文档易读易写，同时保持格式的一致性。</p>
+<h2 id="2-基本语法"><a href="#2-基本语法" class="headerlink" title="2. 基本语法"></a>2. 基本语法</h2><h3 id="2-1-标题"><a href="#2-1-标题" class="headerlink" title="2.1 标题"></a>2.1 标题</h3><p>使用 <code>#</code> 符号表示标题，数量代表标题级别：</p>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="section"># 一级标题</span></span><br><span class="line"><span class="section">## 二级标题</span></span><br><span class="line"><span class="section">### 三级标题</span></span><br><span class="line"><span class="section">#### 四级标题</span></span><br><span class="line"><span class="section">##### 五级标题</span></span><br><span class="line"><span class="section">###### 六级标题</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="2-2-文本格式化"><a href="#2-2-文本格式化" class="headerlink" title="2.2 文本格式化"></a>2.2 文本格式化</h3><ul>
+<li><strong>粗体</strong>：使用 <code>**</code> 或 <code>__</code> 包围文本</li>
+<li><em>斜体</em>：使用 <code>*</code> 或 <code>_</code> 包围文本</li>
+<li><del>删除线</del>：使用 <code>~~</code> 包围文本</li>
+<li><code>行内代码</code>：使用反引号 <code>`</code> 包围文本</li>
+</ul>
+<h3 id="2-3-列表"><a href="#2-3-列表" class="headerlink" title="2.3 列表"></a>2.3 列表</h3><h4 id="无序列表"><a href="#无序列表" class="headerlink" title="无序列表"></a>无序列表</h4><p>使用 <code>-</code>、<code>+</code> 或 <code>*</code> 作为列表标记：</p>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="bullet">-</span> 项目 1</span><br><span class="line"><span class="bullet">-</span> 项目 2</span><br><span class="line"><span class="bullet">  -</span> 子项目 2.1</span><br><span class="line"><span class="bullet">  -</span> 子项目 2.2</span><br></pre></td></tr></table></figure>
+
+<h4 id="有序列表"><a href="#有序列表" class="headerlink" title="有序列表"></a>有序列表</h4><p>使用数字加 <code>.</code> 作为列表标记：</p>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="bullet">1.</span> 第一步</span><br><span class="line"><span class="bullet">2.</span> 第二步</span><br><span class="line"><span class="bullet">   1.</span> 子步骤 2.1</span><br><span class="line"><span class="bullet">   2.</span> 子步骤 2.2</span><br><span class="line"><span class="bullet">3.</span> 第三步</span><br></pre></td></tr></table></figure>
+
+<h3 id="2-4-链接"><a href="#2-4-链接" class="headerlink" title="2.4 链接"></a>2.4 链接</h3><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">[<span class="string">链接文本</span>](<span class="link">https://example.com</span>)</span><br><span class="line"></span><br><span class="line">[<span class="string">链接文本</span>](<span class="link">https://example.com &quot;可选的标题&quot;</span>)</span><br></pre></td></tr></table></figure>
+
+<h3 id="2-5-图片"><a href="#2-5-图片" class="headerlink" title="2.5 图片"></a>2.5 图片</h3><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">![<span class="string">图片描述</span>](<span class="link">https://example.com/image.jpg</span>)</span><br><span class="line"></span><br><span class="line">![<span class="string">图片描述</span>](<span class="link">https://example.com/image.jpg &quot;可选的标题&quot;</span>)</span><br><span class="line"></span><br><span class="line">![<span class="string">图片描述</span>](<span class="link">本地图片路径</span>)</span><br></pre></td></tr></table></figure>
+
+<h3 id="2-6-代码块"><a href="#2-6-代码块" class="headerlink" title="2.6 代码块"></a>2.6 代码块</h3><p>使用三个反引号 <code>```</code> 包围代码块，并可以指定语言：</p>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="code">```python</span></span><br><span class="line"><span class="code">def hello():</span></span><br><span class="line"><span class="code">    print(&quot;Hello, Markdown!&quot;)</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&quot;Hello, Markdown!&quot;</span>);</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">### 2.7 表格</span><br><span class="line"></span><br><span class="line">```markdown</span><br><span class="line">| 列 1 | 列 2 | 列 3 |</span><br><span class="line">|------|------|------|</span><br><span class="line">| 单元格 1 | 单元格 2 | 单元格 3 |</span><br><span class="line">| 单元格 4 | 单元格 5 | 单元格 6 |</span><br></pre></td></tr></table></figure>
+
+<p>可以指定对齐方式：</p>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">| 左对齐 | 居中对齐 | 右对齐 |</span><br><span class="line">| :----- | :------: | -----: |</span><br><span class="line">| 内容 1 | 内容 2 | 内容 3 |</span><br></pre></td></tr></table></figure>
+
+<h3 id="2-8-引用"><a href="#2-8-引用" class="headerlink" title="2.8 引用"></a>2.8 引用</h3><p>使用 <code>&gt;</code> 符号表示引用：</p>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="quote">&gt; 这是一个引用</span></span><br><span class="line"><span class="quote">&gt; </span></span><br><span class="line"><span class="quote">&gt; 引用可以跨多行</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="2-9-分割线"><a href="#2-9-分割线" class="headerlink" title="2.9 分割线"></a>2.9 分割线</h3><p>使用三个或更多的 <code>-</code>、<code>*</code> 或 <code>_</code>：</p>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">---</span><br><span class="line">***</span><br><span class="line">___</span><br></pre></td></tr></table></figure>
+
+<h2 id="3-公式写法"><a href="#3-公式写法" class="headerlink" title="3. 公式写法"></a>3. 公式写法</h2><p>Markdown 支持使用 LaTeX 语法编写数学公式。</p>
+<h3 id="3-1-行内公式"><a href="#3-1-行内公式" class="headerlink" title="3.1 行内公式"></a>3.1 行内公式</h3><p>使用单个美元符号 <code>$</code> 包围公式：</p>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">行内公式示例：$E = mc^2$</span><br><span class="line"></span><br><span class="line">另一个示例：$f(x) = x^2 + 2x + 1$</span><br></pre></td></tr></table></figure>
+
+<h3 id="3-2-块级公式"><a href="#3-2-块级公式" class="headerlink" title="3.2 块级公式"></a>3.2 块级公式</h3><p>使用两个美元符号 <code>$$</code> 包围公式：</p>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">$$</span><br><span class="line">E = mc^2</span><br><span class="line">$$</span><br><span class="line"></span><br><span class="line">$$</span><br><span class="line">f(x) = \frac&#123;1&#125;&#123;\sqrt&#123;2\pi\sigma^2&#125;&#125; e^&#123;-\frac&#123;(x-\mu)^2&#125;&#123;2\sigma^2&#125;&#125;</span><br><span class="line">$$</span><br></pre></td></tr></table></figure>
+
+<h3 id="3-3-常用公式语法"><a href="#3-3-常用公式语法" class="headerlink" title="3.3 常用公式语法"></a>3.3 常用公式语法</h3><h4 id="基本运算"><a href="#基本运算" class="headerlink" title="基本运算"></a>基本运算</h4><ul>
+<li>加法：<code>$a + b$</code> → $a + b$</li>
+<li>减法：<code>$a - b$</code> → $a - b$</li>
+<li>乘法：<code>$a \times b$</code> 或 <code>$a \cdot b$</code> → $a \times b$ 或 $a \cdot b$</li>
+<li>除法：<code>$a \div b$</code> 或 <code>$\frac&#123;a&#125;&#123;b&#125;$</code> → $a \div b$ 或 $\frac{a}{b}$</li>
+</ul>
+<h4 id="上下标"><a href="#上下标" class="headerlink" title="上下标"></a>上下标</h4><ul>
+<li>上标：<code>$a^b$</code> → $a^b$</li>
+<li>下标：<code>$a_b$</code> → $a_b$</li>
+<li>组合：<code>$a_b^c$</code> → $a_b^c$</li>
+</ul>
+<h4 id="括号"><a href="#括号" class="headerlink" title="括号"></a>括号</h4><ul>
+<li>小括号：<code>$(a + b)$</code> → $(a + b)$</li>
+<li>中括号：<code>$[a + b]$</code> → $[a + b]$</li>
+<li>大括号：<code>$\&#123;a + b\&#125;$</code> → ${a + b}$</li>
+<li>绝对值：<code>$|a + b|$</code> → $|a + b|$</li>
+<li>范数：<code>$\|a\|$</code> → $|a|$</li>
+</ul>
+<h4 id="特殊符号"><a href="#特殊符号" class="headerlink" title="特殊符号"></a>特殊符号</h4><ul>
+<li>希腊字母：<code>$\alpha, \beta, \gamma, \delta, \epsilon, \pi, \omega$</code> → $\alpha, \beta, \gamma, \delta, \epsilon, \pi, \omega$</li>
+<li>数学符号：<code>$\sum, \prod, \int, \lim, \infty, \partial, \nabla$</code> → $\sum, \prod, \int, \lim, \infty, \partial, \nabla$</li>
+</ul>
+<h4 id="矩阵"><a href="#矩阵" class="headerlink" title="矩阵"></a>矩阵</h4><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">$$</span><br><span class="line">\begin&#123;bmatrix&#125;</span><br><span class="line">1 &amp; 2 &amp; 3 \\</span><br><span class="line">4 &amp; 5 &amp; 6 \\</span><br><span class="line">7 &amp; 8 &amp; 9</span><br><span class="line">\end&#123;bmatrix&#125;</span><br><span class="line">$$</span><br></pre></td></tr></table></figure>
+
+<p>显示为：</p>
+<p>$$<br>\begin{bmatrix}<br>1 &amp; 2 &amp; 3 \<br>4 &amp; 5 &amp; 6 \<br>7 &amp; 8 &amp; 9<br>\end{bmatrix}<br>$$</p>
+<h4 id="方程组"><a href="#方程组" class="headerlink" title="方程组"></a>方程组</h4><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">$$</span><br><span class="line">\begin&#123;cases&#125;</span><br><span class="line">x + y = 1 \\</span><br><span class="line">2x - y = 2</span><br><span class="line">\end&#123;cases&#125;</span><br><span class="line">$$</span><br></pre></td></tr></table></figure>
+
+<p>显示为：</p>
+<p>$$<br>\begin{cases}<br>x + y &#x3D; 1 \<br>2x - y &#x3D; 2<br>\end{cases}<br>$$</p>
+<h2 id="4-高级功能"><a href="#4-高级功能" class="headerlink" title="4. 高级功能"></a>4. 高级功能</h2><h3 id="4-1-任务列表"><a href="#4-1-任务列表" class="headerlink" title="4.1 任务列表"></a>4.1 任务列表</h3><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="bullet">-</span> [x] 完成任务 1</span><br><span class="line"><span class="bullet">-</span> [ ] 完成任务 2</span><br><span class="line"><span class="bullet">-</span> [ ] 完成任务 3</span><br></pre></td></tr></table></figure>
+
+<h3 id="4-2-脚注"><a href="#4-2-脚注" class="headerlink" title="4.2 脚注"></a>4.2 脚注</h3><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">这是一个脚注示例[^1]。</span><br><span class="line"></span><br><span class="line">[<span class="symbol">^1</span>]: <span class="link">这是脚注的内容。</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="4-3-目录"><a href="#4-3-目录" class="headerlink" title="4.3 目录"></a>4.3 目录</h3><p>许多 Markdown 编辑器支持自动生成目录，通常使用 <code>[TOC]</code> 标记：</p>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[TOC]</span><br></pre></td></tr></table></figure>
+
+<h2 id="5-工具推荐"><a href="#5-工具推荐" class="headerlink" title="5. 工具推荐"></a>5. 工具推荐</h2><ul>
+<li><strong>编辑器</strong>：Visual Studio Code、Typora、MarkText、Obsidian</li>
+<li><strong>在线编辑器</strong>：GitHub Gist、StackEdit、Dillinger</li>
+<li><strong>转换工具</strong>：Pandoc（可将 Markdown 转换为多种格式）</li>
+</ul>
+<h2 id="6-最佳实践"><a href="#6-最佳实践" class="headerlink" title="6. 最佳实践"></a>6. 最佳实践</h2><ol>
+<li>保持语法简洁明了</li>
+<li>使用一致的格式</li>
+<li>为长文档创建目录</li>
+<li>使用代码块时指定语言</li>
+<li>对于复杂公式，使用块级公式格式</li>
+<li>定期保存文档</li>
+</ol>
+<h2 id="7-示例文档"><a href="#7-示例文档" class="headerlink" title="7. 示例文档"></a>7. 示例文档</h2><p>下面是一个综合示例，展示了 Markdown 的各种功能：</p>
+<hr>
+<h1 id="示例文档"><a href="#示例文档" class="headerlink" title="示例文档"></a>示例文档</h1><h2 id="1-简介"><a href="#1-简介" class="headerlink" title="1. 简介"></a>1. 简介</h2><p>这是一个 <strong>Markdown 示例文档</strong>，展示了各种 Markdown 语法的使用方法。</p>
+<h2 id="2-列表示例"><a href="#2-列表示例" class="headerlink" title="2. 列表示例"></a>2. 列表示例</h2><h3 id="2-1-无序列表"><a href="#2-1-无序列表" class="headerlink" title="2.1 无序列表"></a>2.1 无序列表</h3><ul>
+<li>项目 A</li>
+<li>项目 B<ul>
+<li>子项目 B1</li>
+<li>子项目 B2</li>
+</ul>
+</li>
+<li>项目 C</li>
+</ul>
+<h3 id="2-2-有序列表"><a href="#2-2-有序列表" class="headerlink" title="2.2 有序列表"></a>2.2 有序列表</h3><ol>
+<li>第一步：准备材料</li>
+<li>第二步：开始操作<ol>
+<li>子步骤 2.1</li>
+<li>子步骤 2.2</li>
+</ol>
+</li>
+<li>第三步：完成</li>
+</ol>
+<h2 id="3-代码示例"><a href="#3-代码示例" class="headerlink" title="3. 代码示例"></a>3. 代码示例</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">fibonacci</span>(<span class="params">n</span>):</span><br><span class="line">    <span class="string">&quot;&quot;&quot;计算斐波那契数列&quot;&quot;&quot;</span></span><br><span class="line">    <span class="keyword">if</span> n &lt;= <span class="number">1</span>:</span><br><span class="line">        <span class="keyword">return</span> n</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        <span class="keyword">return</span> fibonacci(n-<span class="number">1</span>) + fibonacci(n-<span class="number">2</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 打印前 10 个斐波那契数</span></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">10</span>):</span><br><span class="line">    <span class="built_in">print</span>(fibonacci(i))</span><br></pre></td></tr></table></figure>
+
+<h2 id="4-数学公式"><a href="#4-数学公式" class="headerlink" title="4. 数学公式"></a>4. 数学公式</h2><h3 id="4-1-行内公式"><a href="#4-1-行内公式" class="headerlink" title="4.1 行内公式"></a>4.1 行内公式</h3><p>在物理学中，爱因斯坦的质能方程 $E &#x3D; mc^2$ 是一个著名的公式。</p>
+<h3 id="4-2-块级公式"><a href="#4-2-块级公式" class="headerlink" title="4.2 块级公式"></a>4.2 块级公式</h3><p>$$<br>\int_{a}^{b} f(x) dx &#x3D; F(b) - F(a)<br>$$</p>
+<p>其中 $F(x)$ 是 $f(x)$ 的原函数。</p>
+<h2 id="5-表格"><a href="#5-表格" class="headerlink" title="5. 表格"></a>5. 表格</h2><table>
+<thead>
+<tr>
+<th>姓名</th>
+<th>年龄</th>
+<th>职业</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>张三</td>
+<td>25</td>
+<td>工程师</td>
+</tr>
+<tr>
+<td>李四</td>
+<td>30</td>
+<td>教师</td>
+</tr>
+<tr>
+<td>王五</td>
+<td>28</td>
+<td>医生</td>
+</tr>
+</tbody></table>
+<h2 id="6-引用"><a href="#6-引用" class="headerlink" title="6. 引用"></a>6. 引用</h2><blockquote>
+<p>成功是百分之一的灵感加上百分之九十九的汗水。<br>—— 托马斯·爱迪生</p>
+</blockquote>
+<hr>
+<p>希望本指南能帮助您掌握 Markdown 的使用方法！</p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta"><i class="fas fa-circle-user fa-fw"></i>文章作者: </span><span class="post-copyright-info"><a href="http://example.com">zyajkw</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta"><i class="fas fa-square-arrow-up-right fa-fw"></i>文章链接: </span><span class="post-copyright-info"><a href="http://example.com/2026/10/24/Markdown-%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97/">http://example.com/2026/10/24/Markdown-%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta"><i class="fas fa-circle-exclamation fa-fw"></i>版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来源 <a href="http://example.com" target="_blank">zya的Blog</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/Markdown/">Markdown</a></div><div class="post-share"><div class="social-share" data-image="/img/f7.webp" data-sites="facebook,x,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.6/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.6/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><a class="pagination-related full-width" href="/2026/10/23/%E4%B8%80%E4%BA%9B%E6%9C%89%E7%94%A8%E7%9A%84%E7%BD%91%E7%AB%99/" title="一些有用的网站"><img class="cover" src="/img/tx3.jpeg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="info text-right"><div class="info-1"><div class="info-item-1">下一篇</div><div class="info-item-2">一些有用的网站</div></div><div class="info-2"><div class="info-item-1">网站汇总 大一开学以来遇到了好多网站在这里汇总一下，虽然有些根本用不到，当然有些也不是网站。    https://lianxioj.cn/d/cprog_2026_fall/ 连汐 OJ https://www.luogu.com.cn/ 洛谷，一个算法训练平台 https://hello-ctf.com/ 一个面向新手的网安教程 https://ctf2.dasctf.com/ 一个不错的网安训练平台 https://man.naosi.org/ 大工生存手册，主要跟开发区相关 http://pan.dlut.edu.cn/ 大工云盘 https://share.fnnas.net/s/31bf449cd0764dfc88 这里收集了一些关于转专业的资料 http://jxgl.dlut.edu.cn/student/ucas-sso/login 综合教学管理系统，选课也在里面 https://devstation.developer.huaweicloud.com/ai-devspace 华为云码道网页版 https://blockchain-nexus.feishu.cn...</div></div></div></a></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info text-center"><div class="avatar-img"><img src="/img/tx1.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info-name">zyajkw</div><div class="author-info-description">我会在这里分享日常生活哦҉٩(*´︶`*)۶҉</div><div class="site-data"><a href="/archives/"><div class="headline">文章</div><div class="length-num">6</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">5</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">3</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/xxxxxx"><i class="fab fa-github"></i><span>Follow Me</span></a></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">This is my Blog</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Markdown-%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97"><span class="toc-number">1.</span> <span class="toc-text">Markdown 使用指南</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-%E4%BB%80%E4%B9%88%E6%98%AF-Markdown%EF%BC%9F"><span class="toc-number">1.1.</span> <span class="toc-text">1. 什么是 Markdown？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95"><span class="toc-number">1.2.</span> <span class="toc-text">2. 基本语法</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#2-1-%E6%A0%87%E9%A2%98"><span class="toc-number">1.2.1.</span> <span class="toc-text">2.1 标题</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-2-%E6%96%87%E6%9C%AC%E6%A0%BC%E5%BC%8F%E5%8C%96"><span class="toc-number">1.2.2.</span> <span class="toc-text">2.2 文本格式化</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-3-%E5%88%97%E8%A1%A8"><span class="toc-number">1.2.3.</span> <span class="toc-text">2.3 列表</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%97%A0%E5%BA%8F%E5%88%97%E8%A1%A8"><span class="toc-number">1.2.3.1.</span> <span class="toc-text">无序列表</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%9C%89%E5%BA%8F%E5%88%97%E8%A1%A8"><span class="toc-number">1.2.3.2.</span> <span class="toc-text">有序列表</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-4-%E9%93%BE%E6%8E%A5"><span class="toc-number">1.2.4.</span> <span class="toc-text">2.4 链接</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-5-%E5%9B%BE%E7%89%87"><span class="toc-number">1.2.5.</span> <span class="toc-text">2.5 图片</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-6-%E4%BB%A3%E7%A0%81%E5%9D%97"><span class="toc-number">1.2.6.</span> <span class="toc-text">2.6 代码块</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-8-%E5%BC%95%E7%94%A8"><span class="toc-number">1.2.7.</span> <span class="toc-text">2.8 引用</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-9-%E5%88%86%E5%89%B2%E7%BA%BF"><span class="toc-number">1.2.8.</span> <span class="toc-text">2.9 分割线</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-%E5%85%AC%E5%BC%8F%E5%86%99%E6%B3%95"><span class="toc-number">1.3.</span> <span class="toc-text">3. 公式写法</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#3-1-%E8%A1%8C%E5%86%85%E5%85%AC%E5%BC%8F"><span class="toc-number">1.3.1.</span> <span class="toc-text">3.1 行内公式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-2-%E5%9D%97%E7%BA%A7%E5%85%AC%E5%BC%8F"><span class="toc-number">1.3.2.</span> <span class="toc-text">3.2 块级公式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-3-%E5%B8%B8%E7%94%A8%E5%85%AC%E5%BC%8F%E8%AF%AD%E6%B3%95"><span class="toc-number">1.3.3.</span> <span class="toc-text">3.3 常用公式语法</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%9F%BA%E6%9C%AC%E8%BF%90%E7%AE%97"><span class="toc-number">1.3.3.1.</span> <span class="toc-text">基本运算</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%B8%8A%E4%B8%8B%E6%A0%87"><span class="toc-number">1.3.3.2.</span> <span class="toc-text">上下标</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%8B%AC%E5%8F%B7"><span class="toc-number">1.3.3.3.</span> <span class="toc-text">括号</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%89%B9%E6%AE%8A%E7%AC%A6%E5%8F%B7"><span class="toc-number">1.3.3.4.</span> <span class="toc-text">特殊符号</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%9F%A9%E9%98%B5"><span class="toc-number">1.3.3.5.</span> <span class="toc-text">矩阵</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%96%B9%E7%A8%8B%E7%BB%84"><span class="toc-number">1.3.3.6.</span> <span class="toc-text">方程组</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-%E9%AB%98%E7%BA%A7%E5%8A%9F%E8%83%BD"><span class="toc-number">1.4.</span> <span class="toc-text">4. 高级功能</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#4-1-%E4%BB%BB%E5%8A%A1%E5%88%97%E8%A1%A8"><span class="toc-number">1.4.1.</span> <span class="toc-text">4.1 任务列表</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-2-%E8%84%9A%E6%B3%A8"><span class="toc-number">1.4.2.</span> <span class="toc-text">4.2 脚注</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-3-%E7%9B%AE%E5%BD%95"><span class="toc-number">1.4.3.</span> <span class="toc-text">4.3 目录</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-%E5%B7%A5%E5%85%B7%E6%8E%A8%E8%8D%90"><span class="toc-number">1.5.</span> <span class="toc-text">5. 工具推荐</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#6-%E6%9C%80%E4%BD%B3%E5%AE%9E%E8%B7%B5"><span class="toc-number">1.6.</span> <span class="toc-text">6. 最佳实践</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#7-%E7%A4%BA%E4%BE%8B%E6%96%87%E6%A1%A3"><span class="toc-number">1.7.</span> <span class="toc-text">7. 示例文档</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%A4%BA%E4%BE%8B%E6%96%87%E6%A1%A3"><span class="toc-number">2.</span> <span class="toc-text">示例文档</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-%E7%AE%80%E4%BB%8B"><span class="toc-number">2.1.</span> <span class="toc-text">1. 简介</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-%E5%88%97%E8%A1%A8%E7%A4%BA%E4%BE%8B"><span class="toc-number">2.2.</span> <span class="toc-text">2. 列表示例</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#2-1-%E6%97%A0%E5%BA%8F%E5%88%97%E8%A1%A8"><span class="toc-number">2.2.1.</span> <span class="toc-text">2.1 无序列表</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-2-%E6%9C%89%E5%BA%8F%E5%88%97%E8%A1%A8"><span class="toc-number">2.2.2.</span> <span class="toc-text">2.2 有序列表</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-%E4%BB%A3%E7%A0%81%E7%A4%BA%E4%BE%8B"><span class="toc-number">2.3.</span> <span class="toc-text">3. 代码示例</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-%E6%95%B0%E5%AD%A6%E5%85%AC%E5%BC%8F"><span class="toc-number">2.4.</span> <span class="toc-text">4. 数学公式</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#4-1-%E8%A1%8C%E5%86%85%E5%85%AC%E5%BC%8F"><span class="toc-number">2.4.1.</span> <span class="toc-text">4.1 行内公式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-2-%E5%9D%97%E7%BA%A7%E5%85%AC%E5%BC%8F"><span class="toc-number">2.4.2.</span> <span class="toc-text">4.2 块级公式</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-%E8%A1%A8%E6%A0%BC"><span class="toc-number">2.5.</span> <span class="toc-text">5. 表格</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#6-%E5%BC%95%E7%94%A8"><span class="toc-number">2.6.</span> <span class="toc-text">6. 引用</span></a></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2026/10/24/Markdown-%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97/" title="Markdown 使用指南"><img src="/img/f7.webp" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Markdown 使用指南"/></a><div class="content"><a class="title" href="/2026/10/24/Markdown-%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97/" title="Markdown 使用指南">Markdown 使用指南</a><time datetime="2026-10-24T03:57:48.000Z" title="发表于 2026-10-24 11:57:48">2026-10-24</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2026/10/23/%E4%B8%80%E4%BA%9B%E6%9C%89%E7%94%A8%E7%9A%84%E7%BD%91%E7%AB%99/" title="一些有用的网站"><img src="/img/tx3.jpeg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="一些有用的网站"/></a><div class="content"><a class="title" href="/2026/10/23/%E4%B8%80%E4%BA%9B%E6%9C%89%E7%94%A8%E7%9A%84%E7%BD%91%E7%AB%99/" title="一些有用的网站">一些有用的网站</a><time datetime="2026-10-23T11:29:56.000Z" title="发表于 2026-10-23 19:29:56">2026-10-23</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2026/10/18/%E5%B0%9D%E8%AF%95/" title="一次小尝试"><img src="/img/f6.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="一次小尝试"/></a><div class="content"><a class="title" href="/2026/10/18/%E5%B0%9D%E8%AF%95/" title="一次小尝试">一次小尝试</a><time datetime="2026-10-18T10:19:34.000Z" title="发表于 2026-10-18 18:19:34">2026-10-18</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2026/10/18/%E7%BB%88%E4%BA%8E%E5%AE%8C%E5%B7%A5%E5%93%A9/" title="终于完工哩"><img src="/img/f3.webp" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="终于完工哩"/></a><div class="content"><a class="title" href="/2026/10/18/%E7%BB%88%E4%BA%8E%E5%AE%8C%E5%B7%A5%E5%93%A9/" title="终于完工哩">终于完工哩</a><time datetime="2026-10-18T09:11:37.000Z" title="发表于 2026-10-18 17:11:37">2026-10-18</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2026/10/17/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2/" title="我的第一篇博客"><img src="/img/f4.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="我的第一篇博客"/></a><div class="content"><a class="title" href="/2026/10/17/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2/" title="我的第一篇博客">我的第一篇博客</a><time datetime="2026-10-17T07:54:58.000Z" title="发表于 2026-10-17 15:54:58">2026-10-17</time></div></div></div></div></div></div></main><footer id="footer"><div class="footer-other"><div class="footer-copyright"><span class="copyright">&copy;&nbsp;2025 - 2026 By zyajkw</span><span class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo 7.3.0</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly 5.7.0</a></span></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="日间和夜间模式切换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js?v=5.7.0"></script><script src="/js/main.js?v=5.7.0"></script><div class="js-pjax"></div><script id="canvas_nest" defer="defer" color="255,255,255" opacity="0.7" zIndex="-1" count="200" mobile="ture" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.6/dist/canvas-nest.min.js"></script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div><!-- hexo injector body_end start --><div class="js-pjax"><script async="async">var arr = document.getElementsByClassName('recent-post-item');
+for(var i = 0;i<arr.length;i++){
+    arr[i].classList.add('wow');
+    arr[i].classList.add('animate__zoomIn');
+    arr[i].setAttribute('data-wow-duration', '1s');
+    arr[i].setAttribute('data-wow-delay', '0.2s');
+    arr[i].setAttribute('data-wow-offset', '');
+    arr[i].setAttribute('data-wow-iteration', '');
+  }</script></div><script defer src="https://unpkg.zhimg.com/hexo-butterfly-wowjs/lib/wow.min.js"></script><script defer src="https://unpkg.zhimg.com/hexo-butterfly-wowjs/lib/wow_init.js"></script><script data-pjax>
+  function butterfly_swiper_x_injector_config(){
+    var parent_div_git = document.getElementById('recent-posts');
+    var item_html = '<div class="recent-post-item" style="height: auto;width: 100%"><div class="blog-slider swiper-container-fade swiper-container-horizontal" id="swiper_container"><div class="blog-slider__wrp swiper-wrapper" style="transition-duration: 0ms;"><div class="blog-slider__item swiper-slide" style="width: 750px; opacity: 1; transform: translate3d(0px, 0px, 0px); transition-duration: 0ms;"><a class="blog-slider__img" href="/2026/10/24/Markdown-%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97/" alt=""><img src="/img/f7.webp" loading="lazy" alt="" onerror="this.src=https://cdn.jsdelivr.net/gh/hoochanlon/picx-images-hosting@master/special/loading.gif; this.onerror = null;"/></a><div class="blog-slider__content"><span class="blog-slider__code">2026-10-24</span><a class="blog-slider__title" href="/2026/10/24/Markdown-%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97/" alt="">Markdown 使用指南</a><div class="blog-slider__text">这是老师分享的一个Markdown使用指南 ，希望对大家有用。</div><a class="blog-slider__button" href="/2026/10/24/Markdown-%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97/" alt="">详情</a></div></div><div class="blog-slider__item swiper-slide" style="width: 750px; opacity: 1; transform: translate3d(0px, 0px, 0px); transition-duration: 0ms;"><a class="blog-slider__img" href="/2026/10/18/%E7%BB%88%E4%BA%8E%E5%AE%8C%E5%B7%A5%E5%93%A9/" alt=""><img src="/img/f3.webp" loading="lazy" alt="" onerror="this.src=https://cdn.jsdelivr.net/gh/hoochanlon/picx-images-hosting@master/special/loading.gif; this.onerror = null;"/></a><div class="blog-slider__content"><span class="blog-slider__code">2026-10-18</span><a class="blog-slider__title" href="/2026/10/18/%E7%BB%88%E4%BA%8E%E5%AE%8C%E5%B7%A5%E5%93%A9/" alt="">终于完工哩</a><div class="blog-slider__text">太不容易了</div><a class="blog-slider__button" href="/2026/10/18/%E7%BB%88%E4%BA%8E%E5%AE%8C%E5%B7%A5%E5%93%A9/" alt="">详情</a></div></div><div class="blog-slider__item swiper-slide" style="width: 750px; opacity: 1; transform: translate3d(0px, 0px, 0px); transition-duration: 0ms;"><a class="blog-slider__img" href="/2026/10/17/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2/" alt=""><img src="/img/f4.jpg" loading="lazy" alt="" onerror="this.src=https://cdn.jsdelivr.net/gh/hoochanlon/picx-images-hosting@master/special/loading.gif; this.onerror = null;"/></a><div class="blog-slider__content"><span class="blog-slider__code">2026-10-17</span><a class="blog-slider__title" href="/2026/10/17/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2/" alt="">我的第一篇博客</a><div class="blog-slider__text">感谢腾讯组的大家٩(๑&gt;◡&lt;๑)۶</div><a class="blog-slider__button" href="/2026/10/17/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2/" alt="">详情</a></div></div></div><div class="blog-slider__pagination swiper-pagination-clickable swiper-pagination-bullets"></div></div></div>';
+    console.log('已挂载butterfly_swiper_x')
+    parent_div_git.insertAdjacentHTML("afterbegin",item_html)
+  }
+  var elist = 'undefined'.split(',');
+  var cpage = location.pathname;
+  var epage = '/';
+  var flag = 0;
+
+  for (var i=0;i<elist.length;i++){
+    if (cpage.includes(elist[i])){
+      flag++;
+    }
+  }
+
+  if ((epage === 'all') && (flag == 0)){
+    butterfly_swiper_x_injector_config();
+  }
+  else if (epage === cpage){
+    butterfly_swiper_x_injector_config();
+  }
+  </script><script defer src="https://cdn.jsdelivr.net/npm/hexo-butterfly-swiper-x/lib/swiper.min.js"></script><script defer data-pjax src="https://cdn.jsdelivr.net/npm/hexo-butterfly-swiper-x/lib/swiper_init.js"></script><script data-pjax>
+    function butterfly_categories_card_injector_config(){
+      var parent_div_git = document.getElementsByClassName('recent-posts')[0];
+      var item_html = '<style>li.categoryBar-list-item{width:32.3%;}.categoryBar-list{max-height: 190px;overflow:auto;}.categoryBar-list::-webkit-scrollbar{width:0!important}@media screen and (max-width: 650px){.categoryBar-list{max-height: 160px;}}</style><div class="recent-post-item" style="height:auto;width:100%;padding:0px;"><div id="categoryBar"><ul class="categoryBar-list"><li class="categoryBar-list-item" style="background:url(/img/f1.webp);"><a class="categoryBar-list-link" href="/categories/学习/">学习</a><span class="categoryBar-list-count">2</span><span class="categoryBar-list-descr">学习</span></li><li class="categoryBar-list-item" style="background:url(/img/f3.webp);"><a class="categoryBar-list-link" href="/categories/碎碎念/">碎碎念</a><span class="categoryBar-list-count">2</span><span class="categoryBar-list-descr">碎碎念</span></li><li class="categoryBar-list-item" style="background:url(/img/f2.jpeg);"><a class="categoryBar-list-link" href="/categories/项目/">项目</a><span class="categoryBar-list-count">1</span><span class="categoryBar-list-descr">项目</span></li></ul></div></div>';
+      console.log('已挂载butterfly_categories_card')
+      parent_div_git.insertAdjacentHTML("afterbegin",item_html)
+      }
+    if( document.getElementsByClassName('recent-posts')[0] && (location.pathname ==='/'|| '/' ==='all')){
+    butterfly_categories_card_injector_config()
+    }
+  </script><!-- hexo injector body_end end --></body></html>
